@@ -5,14 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 07 - Verificador de contraseña</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/navegacion.css">
 </head>
 <body>
+<nav class="navegacion-ejercicios" aria-label="Navegación entre ejercicios">
+    <span class="nombre-navegacion">DOM y eventos</span>
+    <a class="nav-inicio" href="../index.html">Todos los ejercicios</a>
+    <div class="nav-pasos"><a href="../ejercicio-06/index.html">← Anterior</a><a href="../ejercicio-08/index.html">Siguiente →</a></div>
+</nav>
     <main class="contenedor">
+        <span class="etiqueta">Ejercicio 07</span>
         <h1>Verificador de contraseña</h1>
         <label for="contrasena">Escribe una contraseña</label>
         <input id="contrasena" type="password" autocomplete="new-password" placeholder="Tu contraseña">
         <p id="mensaje" class="mensaje" aria-live="polite">Escribe para revisar la longitud.</p>
-        <a href="../index.html">Volver al inicio</a>
     </main>
     <script src="js/app.js"></script>
 </body>

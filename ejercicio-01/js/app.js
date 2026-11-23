@@ -1,29 +1,21 @@
-var nombre = document.getElementById("nombre");
-
-var botonSaludar = document.getElementById("botonSaludar");
-
-var botonLimpiar = document.getElementById("botonLimpiar");
-
-var resultado = document.getElementById("resultado");
+const nombre = document.getElementById("nombre");
+const botonSaludar = document.getElementById("botonSaludar");
+const botonLimpiar = document.getElementById("botonLimpiar");
+const resultado = document.getElementById("resultado");
 
 botonSaludar.addEventListener("click", function () {
+    const nombreUsuario = nombre.value.trim();
 
-    var nombreUsuario = nombre.value;
-
-    if (nombreUsuario == "") {
-
+    if (nombreUsuario === "") {
         resultado.textContent = "Por favor, escribe tu nombre.";
-
-    } else {
-
-        resultado.textContent = "¡Hola, " + nombreUsuario + "! Bienvenid@.";
-
+        return;
     }
 
+    resultado.textContent = `¡Hola, ${nombreUsuario}! Bienvenido/a.`;
 });
 
 botonLimpiar.addEventListener("click", function () {
-
-    resultado.textContent = "";;
-
+    nombre.value = "";
+    resultado.textContent = "";
+    nombre.focus();
 });

@@ -1,16 +1,17 @@
-var mensaje = document.getElementById("mensaje");
-
-var resultado = document.getElementById("resultado");
-
+const mensaje = document.getElementById("mensaje");
+const resultado = document.getElementById("resultado");
 
 mensaje.addEventListener("keydown", function (evento) {
+    if (evento.key === "Enter") {
+        const texto = mensaje.value.trim();
 
-    if (evento.key == "Enter") {
+        if (texto === "") {
+            resultado.textContent = "Escribe una tarea antes de presionar Enter.";
+            return;
+        }
 
-        var texto = mensaje.value;
-
-        resultado.textContent = "Tu mensaje: " + texto;
-
+        resultado.textContent = `Nueva tarea: ${texto}`;
+        mensaje.value = "";
+        mensaje.focus();
     }
-
 });

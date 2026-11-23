@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; padding-top: 86px; font-family: Arial, sans-serif; background: #f2f6fc; color: #1f2937; }
+.contenedor { max-width: 620px; margin: 35px auto; padding: 28px; background: white; border-radius: 12px; box-shadow: 0 4px 18px #1f29371a; }
+.etiqueta { color: #1d4ed8; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+h1 { margin: 5px 0 8px; color: #1e3a8a; }
+label { display: block; margin: 18px 0 6px; font-weight: bold; }
+textarea { width: 100%; padding: 11px; border: 1px solid #aab4c2; border-radius: 6px; font: inherit; resize: vertical; }
+.vista-previa { min-height: 110px; margin-top: 20px; padding: 18px; background: #f8fafc; border: 1px solid #dbe3ef; border-radius: 8px; }
+.vista-previa h2 { margin: 0 0 8px; color: #1e3a8a; font-size: 1.05rem; }
+.vista-previa p { min-height: 24px; margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }

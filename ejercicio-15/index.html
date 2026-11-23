@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 15 - Gestor de tareas</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/navegacion.css">
 </head>
 <body>
+<nav class="navegacion-ejercicios" aria-label="Navegación entre ejercicios">
+    <span class="nombre-navegacion">DOM y eventos</span>
+    <a class="nav-inicio" href="../index.html">Todos los ejercicios</a>
+    <div class="nav-pasos"><a href="../ejercicio-14/index.html">← Anterior</a><span class="nav-deshabilitado" aria-disabled="true">Siguiente →</span></div>
+</nav>
     <main class="contenedor">
+        <span class="etiqueta">Ejercicio 15</span>
         <h1>Gestor de tareas</h1>
         <label for="nuevaTarea">Nueva tarea</label>
         <input id="nuevaTarea" type="text" placeholder="Ejemplo: Estudiar JavaScript">
@@ -28,7 +35,6 @@
         </select>
         <ul id="listaTareas"></ul>
         <p id="mensajeMouse" class="mensaje-mouse" aria-live="polite"></p>
-        <a href="../index.html">Volver al inicio</a>
     </main>
     <script src="js/app.js"></script>
 </body>

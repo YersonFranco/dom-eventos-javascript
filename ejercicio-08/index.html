@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 08 - Lista de compras</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/navegacion.css">
 </head>
 <body>
+<nav class="navegacion-ejercicios" aria-label="Navegación entre ejercicios">
+    <span class="nombre-navegacion">DOM y eventos</span>
+    <a class="nav-inicio" href="../index.html">Todos los ejercicios</a>
+    <div class="nav-pasos"><a href="../ejercicio-07/index.html">← Anterior</a><a href="../ejercicio-09/index.html">Siguiente →</a></div>
+</nav>
     <main class="contenedor">
+        <span class="etiqueta">Ejercicio 08</span>
         <h1>Lista de compras</h1>
         <label for="producto">Producto</label>
         <div class="fila">
@@ -16,7 +23,6 @@
         </div>
         <p id="aviso" class="aviso" aria-live="polite"></p>
         <ul id="listaCompras"></ul>
-        <a href="../index.html">Volver al inicio</a>
     </main>
     <script src="js/app.js"></script>
 </body>

@@ -1,35 +1,25 @@
-var numero = 0;
+const contador = document.getElementById("contador");
+const botonAumentar = document.getElementById("botonAumentar");
+const botonReiniciar = document.getElementById("botonReiniciar");
 
-var contador = document.getElementById("contador");
+let numero = 0;
 
-var botonAumentar = document.getElementById("botonAumentar");
-
-var botonReiniciar = document.getElementById("botonReiniciar");
-
-botonAumentar.addEventListener("click", function () {
-
-    numero = numero + 1;
-
+function actualizarContador() {
     contador.textContent = numero;
 
     if (numero >= 10) {
-
-        contador.style.color = "green";
-
+        contador.classList.add("meta-alcanzada");
     } else {
-
-        contador.style.color = "black";
-
+        contador.classList.remove("meta-alcanzada");
     }
+}
 
+botonAumentar.addEventListener("click", function () {
+    numero = numero + 1;
+    actualizarContador();
 });
 
 botonReiniciar.addEventListener("click", function () {
-
     numero = 0;
-
-    contador.textContent = numero;
-
-    contador.style.color = "black";
-
+    actualizarContador();
 });

@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 06 - Calculadora de IMC</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/navegacion.css">
 </head>
 <body>
+<nav class="navegacion-ejercicios" aria-label="Navegación entre ejercicios">
+    <span class="nombre-navegacion">DOM y eventos</span>
+    <a class="nav-inicio" href="../index.html">Todos los ejercicios</a>
+    <div class="nav-pasos"><a href="../ejercicio-05/index.html">← Anterior</a><a href="../ejercicio-07/index.html">Siguiente →</a></div>
+</nav>
     <main class="contenedor">
+        <span class="etiqueta">Ejercicio 06</span>
         <h1>Calculadora de IMC</h1>
         <p>Ingresa tu peso en kilogramos y tu estatura en metros.</p>
         <label for="peso">Peso (kg)</label>
@@ -16,7 +23,6 @@
         <input id="estatura" type="number" min="0" step="any" placeholder="Ejemplo: 1.75">
         <button id="botonCalcular" type="button">Calcular IMC</button>
         <p id="resultado" class="resultado" aria-live="polite"></p>
-        <a href="../index.html">Volver al inicio</a>
     </main>
     <script src="js/app.js"></script>
 </body>

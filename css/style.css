@@ -1,0 +1,45 @@
+:root {
+    --azul-oscuro: #1e3a8a;
+    --azul: #1d4ed8;
+    --azul-claro: #dbeafe;
+    --fondo: #f5f7fa;
+    --texto: #1f2937;
+    --texto-suave: #526174;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--texto); background: var(--fondo); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+.encabezado { padding: 38px 20px 25px; color: white; text-align: center; background: var(--azul-oscuro); }
+.sobrelinea { margin: 0 0 5px; color: #bfdbfe; font-size: .78rem; font-weight: 700; letter-spacing: .16em; }
+.encabezado h1 { margin: 0; font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.2; }
+.descripcion-encabezado { max-width: 680px; margin: 12px auto 20px; color: #e0e7ff; }
+.contenido { width: min(100% - 32px, 1000px); margin: 0 auto; }
+.introduccion { margin: 28px 0 34px; padding: 22px 24px; background: white; border-radius: 12px; box-shadow: 0 3px 12px #1f293710; }
+.introduccion h2, .seccion-ejercicios h2 { margin: 0; color: var(--azul); font-size: 1.45rem; }
+.introduccion p { margin: 8px 0 14px; color: var(--texto-suave); }
+.resumen-conceptos { display: flex; flex-wrap: wrap; gap: 8px; }
+.resumen-conceptos span { padding: 5px 11px; color: var(--azul-oscuro); background: var(--azul-claro); border-radius: 999px; font-size: .88rem; font-weight: 700; }
+.seccion-ejercicios { padding-bottom: 38px; }
+.seccion-ejercicios > h2 { padding-bottom: 6px; border-bottom: 2px solid var(--azul); }
+.subtitulo-seccion { margin: 8px 0 18px; color: var(--texto-suave); }
+.rejilla-ejercicios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.tarjeta-ejercicio { display: flex; min-height: 245px; flex-direction: column; align-items: flex-start; padding: 18px; background: white; border-radius: 10px; box-shadow: 0 3px 12px #1f293710; transition: transform .18s ease, box-shadow .18s ease; }
+.tarjeta-ejercicio:hover { transform: translateY(-3px); box-shadow: 0 8px 20px #1f29371c; }
+.numero-ejercicio { display: inline-flex; width: 42px; height: 42px; align-items: center; justify-content: center; margin-bottom: 9px; color: white; background: var(--azul-oscuro); border-radius: 9px; font-size: 1.1rem; font-weight: 700; }
+.etiqueta { margin-bottom: 4px; color: var(--azul); font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.tarjeta-ejercicio h3 { margin: 0 0 5px; font-size: 1.08rem; }
+.tarjeta-ejercicio p { margin: 0 0 16px; color: var(--texto-suave); font-size: .93rem; }
+.boton-ejercicio { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 8px; margin-top: auto; padding: 9px 12px; color: white; background: var(--azul); border-radius: 6px; font-weight: 700; text-decoration: none; }
+.boton-ejercicio:hover, .boton-ejercicio:focus { color: white; background: var(--azul-oscuro); }
+.pie-pagina { padding: 16px; color: white; background: var(--azul-oscuro); text-align: center; }
+.pie-pagina p { margin: 0; font-size: .9rem; }
+
+@media (max-width: 800px) { .rejilla-ejercicios { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 540px) {
+    .encabezado { padding-top: 30px; }
+    .contenido { width: min(100% - 22px, 1000px); }
+    .introduccion { padding: 18px; }
+    .rejilla-ejercicios { grid-template-columns: 1fr; gap: 13px; }
+    .tarjeta-ejercicio { min-height: 220px; }
+}

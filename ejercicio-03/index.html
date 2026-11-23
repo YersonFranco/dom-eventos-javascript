@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Ejercicio 03 - Vista previa de texto</title>
-
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="../css/navegacion.css">
 </head>
-
 <body>
-
-    <h1>Vista previa de texto</h1>
-
-    <input type="text" id="textoUsuario" placeholder="Escribe algo aquí">
-
-    <h2>Vista previa:</h2>
-
-    <p id="vistaPrevia"></p>
-
+<nav class="navegacion-ejercicios" aria-label="Navegación entre ejercicios">
+    <span class="nombre-navegacion">DOM y eventos</span>
+    <a class="nav-inicio" href="../index.html">Todos los ejercicios</a>
+    <div class="nav-pasos"><a href="../ejercicio-02/index.html">← Anterior</a><a href="../ejercicio-04/index.html">Siguiente →</a></div>
+</nav>
+    <main class="contenedor">
+        <span class="etiqueta">Ejercicio 03</span>
+        <h1>Vista previa de texto</h1>
+        <p>El contenido de la vista previa se actualiza mientras escribes.</p>
+        <label for="textoUsuario">Texto</label>
+        <textarea id="textoUsuario" rows="4" placeholder="Escribe algo aquí"></textarea>
+        <section class="vista-previa">
+            <h2>Vista previa</h2>
+            <p id="vistaPrevia" aria-live="polite"></p>
+        </section>
+    </main>
     <script src="js/app.js"></script>
-
 </body>
-
 </html>
