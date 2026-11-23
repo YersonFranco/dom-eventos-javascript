@@ -1,0 +1,17 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; font-family: Arial, sans-serif; background: #f2f6fc; color: #1f2937; }
+.contenedor { max-width: 680px; margin: 30px auto; padding: 28px; background: white; border-radius: 12px; box-shadow: 0 4px 18px #1f29371a; }
+h1 { margin-top: 0; }
+.bloque { margin: 22px 0; padding: 18px; background: #f8fafc; border-radius: 8px; }
+.bloque h2, .resumen h2 { margin-top: 0; }
+label { display: block; margin: 12px 0 6px; font-weight: bold; }
+input { width: 100%; padding: 10px; border: 1px solid #aab4c2; border-radius: 6px; font: inherit; }
+.fila { display: flex; gap: 8px; }
+.fila input { min-width: 0; flex: 1; }
+button { margin-top: 12px; padding: 10px 14px; border: 0; border-radius: 6px; background: #2563eb; color: white; font: inherit; cursor: pointer; }
+.fila button { margin-top: 0; }
+.resumen { padding: 18px; border: 1px solid #dbe3ef; border-radius: 8px; }
+.aviso { min-height: 22px; color: #b91c1c; }
+.mensaje { color: #b91c1c; font-weight: bold; }
+.sobre-presupuesto { color: #dc2626; }
+a { color: #1d4ed8; }

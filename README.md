@@ -1,12 +1,12 @@
-# Ejercicios de DOM y eventos en JavaScript (1 al 10)
+# Ejercicios de DOM y eventos en JavaScript (1 al 15)
 
-Este proyecto reúne los primeros diez ejercicios de la actividad de **DOM y eventos**. Con ellos se practica cómo conectar elementos HTML con JavaScript para responder a clics, escritura y cambios de selección, y cómo actualizar lo que ve la persona en la página.
+Este proyecto reúne los primeros quince ejercicios de la actividad de **DOM y eventos**. Con ellos se practica cómo conectar elementos HTML con JavaScript para responder a clics, escritura, envíos de formularios, cambios de selección y movimientos del cursor, y cómo actualizar lo que ve la persona en la página.
 
-Los ejercicios 1 al 5 se hicieron inicialmente con `var`. En los ejercicios 6 al 10 se empieza a usar JavaScript moderno con `const` y `let`, de acuerdo con las lecturas de clase. Cada ejercicio está separado en su propia carpeta y funciona en el navegador sin backend ni instalación adicional.
+Los ejercicios 1 al 5 se hicieron inicialmente con `var`. Desde el ejercicio 6 se usa JavaScript moderno con `const` y `let`, de acuerdo con las lecturas de clase. Cada ejercicio está separado en su propia carpeta y funciona en el navegador sin backend ni instalación adicional.
 
 ## Cómo abrir y recorrer el proyecto
 
-Abre el archivo `index.html` que está dentro de la carpeta del ejercicio que quieras revisar. Por ejemplo, abre `ejercicio-01/index.html` para el saludo o `ejercicio-10/index.html` para el semáforo. También puedes abrir el `index.html` de la raíz si está configurado como página de entrada del proyecto.
+Abre el archivo `index.html` que está dentro de la carpeta del ejercicio que quieras revisar. Por ejemplo, abre `ejercicio-01/index.html` para el saludo o `ejercicio-15/index.html` para el gestor de tareas.
 
 La estructura de cada ejercicio es:
 
@@ -20,6 +20,8 @@ ejercicio-XX/
 ```
 
 El HTML carga la hoja de estilos y el archivo JavaScript. En el HTML, los atributos `id` identifican los campos, botones y zonas de resultado. JavaScript busca esos elementos con `document.getElementById(...)`, escucha eventos mediante `addEventListener(...)` y cambia contenido o estilos del DOM.
+
+Los ejercicios 7 al 15 siguen la misma estructura. La galería del ejercicio 13 incluye además imágenes SVG locales dentro de `ejercicio-13/img/`.
 
 ## Ejercicios
 
@@ -103,28 +105,70 @@ El HTML carga la hoja de estilos y el archivo JavaScript. En el HTML, los atribu
 
 **Qué se practica:** funciones para reutilizar instrucciones, eventos `click`, `classList.add` y `classList.remove`, y texto dinámico con `textContent`.
 
+### 11. Formulario de registro con validación
+
+**Qué hace:** solicita nombre, correo y edad. Al pulsar **Registrarme**, revisa cada dato y muestra un mensaje debajo del campo que necesite corrección. Si el nombre no está vacío, el correo contiene `@` y la edad es de 18 años o más, muestra el mensaje de registro completado.
+
+**Cómo funciona:** el formulario escucha el evento `submit`. `evento.preventDefault()` evita que el navegador recargue la página. Antes de revisar los datos, el código limpia los mensajes anteriores. La variable `formularioValido`, declarada con `let`, empieza en `true` y cambia a `false` si alguna regla falla. Cuando todo es válido, muestra el éxito y limpia el formulario con `reset()`.
+
+**Qué se practica:** formularios, evento `submit`, evitar el envío tradicional, validaciones con condiciones, tipo `number`, método `includes()` para revisar el correo y variables booleanas.
+
+### 12. Generador de tabla de multiplicar
+
+**Qué hace:** recibe un número y presenta sus multiplicaciones desde 1 hasta 10. Si se genera otra tabla, la anterior se reemplaza. Si el campo está vacío, muestra un aviso.
+
+**Cómo funciona:** el clic primero limpia el contenedor. Si hay un valor, lo convierte a número y crea una tabla HTML con JavaScript. Un ciclo `for` avanza del 1 al 10; en cada vuelta crea una fila y dos celdas, escribe la operación y su resultado y agrega esos elementos a la tabla.
+
+**Qué se practica:** conversión de texto a número, ciclo `for`, creación dinámica de elementos (`table`, `tr`, `td`), multiplicación y limpieza de contenido con `textContent`.
+
+### 13. Galería de imágenes con miniaturas
+
+**Qué hace:** muestra una imagen principal con su título y tres miniaturas. Al elegir una miniatura, cambia la imagen grande y su título, y la miniatura activa queda marcada visualmente. Las imágenes son archivos SVG locales del proyecto.
+
+**Cómo funciona:** `querySelectorAll()` obtiene todas las miniaturas y `forEach()` recorre cada una para asignarle un evento `click`. Los atributos `data-src` y `data-titulo` guardan los datos de cada imagen. Al hacer clic, se actualizan `src`, `alt` y el título. Luego se quita la clase `activa` de todas y se añade a la miniatura seleccionada.
+
+**Qué se practica:** selección de varios elementos del DOM, atributos `data-*`, propiedades de imagen, ciclos `forEach`, eventos `click` y clases CSS.
+
+### 14. Calculadora de presupuesto
+
+**Qué hace:** permite guardar un presupuesto inicial, registrar gastos con nombre y valor, y ver el total gastado y el dinero restante. Si el total de los gastos supera el presupuesto, el saldo se muestra en rojo y aparece el aviso correspondiente.
+
+**Cómo funciona:** `presupuestoInicial` y `presupuestoEstablecido` guardan el presupuesto y si ya fue confirmado. El arreglo `gastos` conserva los gastos como objetos con nombre y valor. Al agregar un gasto, se valida que haya presupuesto guardado, un nombre y un valor mayor que cero. `actualizarResumen()` recorre los gastos, suma sus valores y actualiza los tres totales. También compara el saldo para añadir o quitar la clase de saldo excedido.
+
+**Qué se practica:** variables `let`, arreglos, objetos, funciones, ciclo `forEach`, suma y resta, validación, creación de elementos de lista y clases CSS condicionales.
+
+### 15. Gestor de tareas con estado
+
+**Qué hace:** agrega tareas con prioridad baja, media o alta. Cada una aparece con botones para completarla o eliminarla. Las tareas completadas permanecen en la lista con el texto tachado, el contador muestra solo las pendientes y un selector permite filtrar todas, pendientes o completadas. Al pasar el cursor sobre una tarea, aparece una breve descripción.
+
+**Cómo funciona:** el arreglo `tareas` almacena objetos con `nombre`, `prioridad` y `completada`. Al agregar una tarea se valida el texto, se crea el objeto y se guarda con `push()`. `mostrarTareas()` reconstruye la lista desde el arreglo, cuenta las pendientes y respeta el filtro seleccionado. Los botones cambian el estado de la tarea o la quitan con `splice()`. Los eventos `mouseenter` y `mouseleave` actualizan el mensaje del cursor.
+
+**Qué se practica:** arreglos y objetos, propiedades booleanas, funciones, ciclos, filtros con condiciones, eventos `click`, `change`, `mouseenter` y `mouseleave`, creación de controles HTML y actualización del contador.
+
 ## Variables: de `var` a `const` y `let`
 
-En los ejercicios 1 al 5 se usa `var`, que es una forma antigua de declarar variables y aparece en el código con el que se empezó a trabajar. Desde el ejercicio 6 se usan `const` y `let`, siguiendo la lectura de scope:
+En los ejercicios 1 al 5 se usa `var`, que es una forma antigua de declarar variables y aparece en el código con el que se empezó a trabajar. Desde el ejercicio 6 hasta el 15 se usan `const` y `let`, siguiendo la lectura de scope:
 
 - **`const`** se usa para una referencia que no se va a reasignar, por ejemplo el botón, el input o el párrafo que se selecciona una vez del HTML. El elemento puede cambiar su contenido o estilo; `const` significa que la variable seguirá apuntando a ese mismo elemento.
-- **`let`** se usa cuando la variable guardará un valor que se reasigna, como un contador o un resultado que se calcula de nuevo. En los ejercicios 6 al 10 muchas variables son referencias constantes del DOM, por eso basta con `const`; los valores calculados dentro de una acción se guardan en `const` si no necesitan reasignarse.
+- **`let`** se usa cuando la variable guardará un valor que se reasigna, como el estado de validación del registro, el presupuesto o una suma. En los ejercicios 6 al 15 muchas variables son referencias constantes del DOM, por eso basta con `const`; los valores calculados dentro de una acción se guardan en `const` si no necesitan reasignarse.
 
-El **scope** es el alcance de una variable: indica en qué parte del código puede utilizarse. Por ejemplo, variables declaradas dentro de la función de un evento se usan dentro de esa función. La recomendación de estos ejercicios es empezar con `const` y elegir `let` si el valor realmente debe cambiar. En los ejercicios 6 al 10 no se usa `var`.
+El **scope** es el alcance de una variable: indica en qué parte del código puede utilizarse. Por ejemplo, variables declaradas dentro de la función de un evento se usan dentro de esa función. La recomendación de estos ejercicios es empezar con `const` y elegir `let` si el valor realmente debe cambiar. En los ejercicios 6 al 15 no se usa `var`.
 
 ## Eventos y tipos de datos que aparecen
 
 - `click`: se activa al pulsar un botón.
 - `input`: se activa cuando cambia lo que se escribe en un campo.
-- `change`: se activa cuando cambia la opción de un selector.
+- `change`: se activa cuando cambia la opción de un selector o el filtro de tareas.
 - `keydown`: se activa cuando se presiona una tecla y permite revisar cuál fue con `evento.key`.
+- `submit`: se activa al enviar un formulario; `preventDefault()` permite validar sin recargar la página.
+- `mouseenter` y `mouseleave`: se activan al entrar o salir el cursor de una tarea.
 - `load` y `error`: indican si una imagen terminó de cargar o no pudo cargarse.
 
-Los campos de texto proporcionan valores de tipo **string**. Los ejercicios pueden mostrarlos como texto o convertirlos con `Number(...)` para hacer operaciones. Los resultados de comparaciones, como `numero >= 10`, son valores booleanos (`true` o `false`) que se usan en condiciones. Las etiquetas y botones que seleccionamos son objetos del DOM, con propiedades y métodos como `value`, `textContent`, `style` y `addEventListener`.
+Los campos de texto proporcionan valores de tipo **string**. Los ejercicios pueden mostrarlos como texto o convertirlos con `Number(...)` para hacer operaciones. Los resultados de comparaciones, como `numero >= 10`, son valores booleanos (`true` o `false`) que se usan en condiciones. El presupuesto y las tareas se guardan en arreglos (`array`) de objetos para mantener juntas varias piezas de información relacionada. Las etiquetas y botones que seleccionamos son objetos del DOM, con propiedades y métodos como `value`, `textContent`, `style` y `addEventListener`.
 
 ## Resumen de tecnologías
 
-- **HTML:** crea los inputs, botones, párrafos, listas, tarjeta y luces.
+- **HTML:** crea inputs, botones, formularios, tablas, listas, tarjetas, imágenes y luces.
 - **CSS:** define colores, tamaños y presentación, y representa los estados visuales.
 - **JavaScript:** selecciona los elementos, escucha eventos, valida entradas y cambia el contenido o la apariencia.
 - **DOM:** es la representación de la página que JavaScript puede consultar y actualizar mientras se usa.

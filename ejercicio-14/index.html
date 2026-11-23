@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14 - Calculadora de presupuesto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Calculadora de presupuesto</h1>
+        <section class="bloque">
+            <h2>Presupuesto inicial</h2>
+            <label for="presupuesto">Dinero disponible</label>
+            <div class="fila">
+                <input id="presupuesto" type="number" min="0" step="any" placeholder="Ejemplo: 100000">
+                <button id="botonPresupuesto" type="button">Guardar</button>
+            </div>
+        </section>
+        <section class="bloque">
+            <h2>Agregar un gasto</h2>
+            <label for="nombreGasto">Nombre del gasto</label>
+            <input id="nombreGasto" type="text" placeholder="Ejemplo: Transporte">
+            <label for="valorGasto">Valor</label>
+            <input id="valorGasto" type="number" min="0" step="any" placeholder="Ejemplo: 5000">
+            <button id="botonAgregarGasto" type="button">Agregar gasto</button>
+        </section>
+        <p id="aviso" class="aviso" aria-live="polite"></p>
+        <section class="resumen">
+            <h2>Resumen</h2>
+            <p>Presupuesto inicial: <strong id="totalPresupuesto">$0</strong></p>
+            <p>Total gastado: <strong id="totalGastado">$0</strong></p>
+            <p>Dinero restante: <strong id="dineroRestante">$0</strong></p>
+            <p id="mensajePresupuesto" class="mensaje"></p>
+        </section>
+        <h2>Gastos registrados</h2>
+        <ul id="listaGastos"></ul>
+        <a href="../index.html">Volver al inicio</a>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

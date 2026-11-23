@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13 - Galería de imágenes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Galería de imágenes</h1>
+        <figure class="imagen-principal">
+            <img id="imagenPrincipal" src="img/montanas.svg" alt="Montañas bajo un cielo azul">
+            <figcaption id="tituloImagen">Montañas</figcaption>
+        </figure>
+        <div class="miniaturas" aria-label="Selecciona una imagen">
+            <button class="miniatura activa" type="button" data-src="img/montanas.svg" data-titulo="Montañas" aria-label="Ver montañas">
+                <img src="img/montanas.svg" alt="">
+            </button>
+            <button class="miniatura" type="button" data-src="img/playa.svg" data-titulo="Playa" aria-label="Ver playa">
+                <img src="img/playa.svg" alt="">
+            </button>
+            <button class="miniatura" type="button" data-src="img/bosque.svg" data-titulo="Bosque" aria-label="Ver bosque">
+                <img src="img/bosque.svg" alt="">
+            </button>
+        </div>
+        <a href="../index.html">Volver al inicio</a>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
