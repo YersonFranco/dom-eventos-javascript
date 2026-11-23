@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10 - Semáforo interactivo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Semáforo interactivo</h1>
+        <div class="semaforo" aria-label="Semáforo">
+            <span id="luzRoja" class="luz roja" aria-label="Luz roja"></span>
+            <span id="luzAmarilla" class="luz amarilla" aria-label="Luz amarilla"></span>
+            <span id="luzVerde" class="luz verde" aria-label="Luz verde"></span>
+        </div>
+        <div class="botones">
+            <button id="botonRojo" type="button">Rojo</button>
+            <button id="botonAmarillo" type="button">Amarillo</button>
+            <button id="botonVerde" type="button">Verde</button>
+        </div>
+        <p id="estado" aria-live="polite">Selecciona una luz.</p>
+        <a href="../index.html">Volver al inicio</a>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>

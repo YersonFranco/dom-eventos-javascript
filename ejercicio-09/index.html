@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09 - Tarjeta de perfil en vivo</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Tarjeta de perfil en vivo</h1>
+        <section class="formulario" aria-label="Datos del perfil">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Escribe tu nombre">
+            <label for="profesion">Profesión</label>
+            <input id="profesion" type="text" placeholder="Escribe tu profesión">
+            <label for="foto">URL de una foto</label>
+            <input id="foto" type="url" placeholder="https://ejemplo.com/foto.jpg">
+            <p id="aviso" class="aviso" aria-live="polite"></p>
+        </section>
+        <article class="tarjeta">
+            <img id="imagenPerfil" src="https://placehold.co/160x160?text=Perfil" alt="Foto de perfil de ejemplo">
+            <h2 id="nombrePerfil">Tu nombre</h2>
+            <p id="profesionPerfil">Tu profesión</p>
+        </article>
+        <a href="../index.html">Volver al inicio</a>
+    </main>
+    <script src="js/app.js"></script>
+</body>
+</html>
